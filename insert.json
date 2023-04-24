@@ -5,3 +5,11 @@
   "category": ["Laptops" ,"Dell", "Inspiron"] ,
   "image": "https://www.dell.com/support/home/us/en/04/product-support/product/inspiron-15-5000-laptop/drivers"
 }
+{
+  "username" : "admin",
+  "password" : "123456",
+  "names" : "Nombre Admin",
+  "last_names" : "Apellidos Admin",
+  "date_birth" : "24/09/1999",
+  "phone" : "12345678"
+}
