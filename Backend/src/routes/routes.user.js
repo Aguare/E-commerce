@@ -1,5 +1,6 @@
 import { Router } from "express";
 import User from "../Models/User";
+import { Alert } from "../Models/Alert";
 
 const router = Router();
 
@@ -14,20 +15,18 @@ router.post("/add", async (req, res) => {
     console.log(userSaved);
     res.send("Ok");
   } catch (error) {
-    let title = "";
-    let message = "";
-    let status = 500;
+    const al = new Alert("", "", "danger", true, error.code);
 
     if (error.code === 11000) {
-      title = "Error de duplicado";
-      message = "El nombre de usuario ya está registrado";
+      al.title = "Error de duplicado";
+      al.message = "El nombre de usuario ya está registrado";
       status = 400;
     } else {
-      title = "Error desconocido";
-      message = "Ha ocurrido un error al intentar guardar el usuario";
+      al.title = "Error desconocido";
+      al.message = "Ha ocurrido un error al intentar guardar el usuario";
     }
 
-    res.status(status).json({ title, message, errorType: error.name });
+    res.status(status).json(al);
   }
 });
 
