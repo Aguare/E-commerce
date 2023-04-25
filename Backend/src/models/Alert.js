@@ -7,3 +7,5 @@ class Alert {
     this.code = code;
   }
 }
+
+export default Alert;
