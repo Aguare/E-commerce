@@ -1,3 +1,5 @@
+import Alert from "../models/Alert.js";
+
 function createAlert(error) {
   const alert = new Alert("", "", "danger", true, error.code);
   switch (error.code) {
