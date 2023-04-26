@@ -20,6 +20,18 @@ router.post("/add", async (req, res) => {
   }
 });
 
+router.put("/update", async (req, res) => {
+  try {
+    const user = User(req.body);
+    const userUpdated = await User.findOneAndReplace();
+    console.log(userUpdated);
+    res.status(201).send("OK");
+  } catch (error) {
+    const al = createAlert(error);
+    res.status(400).send(al);
+  }
+});
+
 router.get("/list", async (req, res) => {
   const users = await User.find();
   res.send(users);
