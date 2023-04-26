@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-const packageSchema = new Schema(
+const orderSchema = new Schema(
   {
     number: {
       type: Number,
@@ -44,4 +44,4 @@ const packageSchema = new Schema(
   }
 );
 
-export default model("Package", packageSchema);
+export default model("Order", orderSchema);
