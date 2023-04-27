@@ -7,6 +7,7 @@ import { NavMainComponent } from './Components/Navbars/nav-main/nav-main.compone
 import { CarouselImagesComponent } from './Components/Ads/carousel-images/carousel-images.component';
 import { CarouselCategorysComponent } from './Components/Ads/carousel-categorys/carousel-categorys.component';
 import { CardProductComponent } from './Components/Products/card-product/card-product.component';
+import { CarouselProductsComponent } from './Components/Products/carousel-products/carousel-products.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CardProductComponent } from './Components/Products/card-product/card-pr
     NavMainComponent,
     CarouselImagesComponent,
     CarouselCategorysComponent,
-    CardProductComponent
+    CardProductComponent,
+    CarouselProductsComponent
   ],
   imports: [
     BrowserModule,
