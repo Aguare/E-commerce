@@ -15,12 +15,7 @@ const productSchema = new Schema(
       type: Boolean,
       default: false,
     },
-    categorys: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Category",
-      },
-    ],
+    category: String,
   },
   {
     timestamps: true,

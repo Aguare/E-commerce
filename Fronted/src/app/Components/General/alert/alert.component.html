@@ -1,0 +1,21 @@
+<div
+  *ngIf="alert.show && alert.type === 'success'"
+  class="alert alert-success my-3"
+>
+  <strong>{{ alert.title }}</strong> {{ alert.message }}
+</div>
+<div
+  *ngIf="alert.show && alert.type === 'danger'"
+  class="alert alert-danger my-3"
+>
+  <strong>{{ alert.title }}</strong> {{ alert.message }}
+</div>
+<div *ngIf="alert.show && alert.type === 'info'" class="alert alert-info my-3">
+  <strong>{{ alert.title }}</strong> {{ alert.message }}
+</div>
+<div
+  *ngIf="alert.show && alert.type === 'warning'"
+  class="alert alert-warning my-3"
+>
+  <strong>{{ alert.title }}</strong> {{ alert.message }}
+</div>

@@ -9,22 +9,34 @@ import Splide from "@splidejs/splide";
 export class CarouselCategorysComponent {
   ngAfterViewInit() {
     var splide = new Splide("#categorys-carousel", {
-      type: "slide",
+      type: "loop",
       perMove: 1,
-      perPage: 7,
-      gap: "10px",
+      perPage: 12,
+      gap: "1px",
+      padding: {
+        right: "10px",
+        left: "10px",
+      },
       pagination: false,
       autoplay: false,
       arrows: true,
       pauseOnHover: true,
       breakpoints: {
         640: {
-          perPage: 2,
-          gap: "20px",
+          perPage: 4,
+          gap: "2px",
         },
-        768: {
-          perPage: 3,
-          gap: "30px",
+        1000: {
+          perPage: 5,
+          gap: "3px",
+        },
+        1200: {
+          perPage: 7,
+          gap: "3px",
+        },
+        1400: {
+          perPage: 9,
+          gap: "3px",
         },
       },
     });

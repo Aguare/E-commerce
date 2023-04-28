@@ -8,8 +8,7 @@ const router = Router();
 router.post("/add", async (req, res) => {
   try {
     const product = Product(req.body);
-    const productSaved = await product.save();
-    console.log(productSaved);
+    await product.save();
     const alert = createMessage(
       "Producto registrado",
       "El producto se ha registrado correctamente"
@@ -21,10 +20,10 @@ router.post("/add", async (req, res) => {
   }
 });
 
-router.put("/update/:id", async (req, res) => {
+router.put("/update", async (req, res) => {
   try {
-    const { id } = req.params;
-    await Product.findByIdAndUpdate(id, req.body);
+    const product = Product(req.body);
+    await Product.findByIdAndUpdate(product._id, req.body);
     const alert = createMessage(
       "Producto actualizado",
       "El producto se ha actualizado correctamente"
@@ -54,6 +53,12 @@ router.delete("/delete/:id", async (req, res) => {
 router.get("/allProducts", async (req, res) => {
   const products = await Product.find();
   res.send(products);
+});
+
+router.get("/get/:id", async (req, res) => {
+  const { id } = req.params;
+  const product = await Product.findById(id);
+  res.send(product);
 });
 
 function createMessage(title, message) {
