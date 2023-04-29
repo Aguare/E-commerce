@@ -61,6 +61,12 @@ router.get("/get/:id", async (req, res) => {
   res.send(product);
 });
 
+router.get("/allProductsByUser/:id", async (req, res) => {
+  const { id } = req.params;
+  const products = await Product.find({ user_seller: { $in: [id] } });
+  res.send(products);
+});
+
 function createMessage(title, message) {
   return new Alert(title, message, "success", true, 200);
 }

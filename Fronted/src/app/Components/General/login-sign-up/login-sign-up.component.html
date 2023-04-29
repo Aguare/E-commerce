@@ -28,38 +28,41 @@
     />
     <label class="btn btn-outline-primary" for="btnradio2">Registrarse</label>
   </div>
-  <div *ngIf="isLogin" class="row my-4">
-    <div class="col d-grid align-items-center">
-      <form [formGroup]="loginForm" (ngSubmit)="login()">
-        <h1 class="text-center">Iniciar Sesión</h1>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">@</span>
-          <input
-            type="text"
-            class="form-control"
-            formControlName="username"
-            placeholder="Usuario"
-            aria-label="Usuario"
-            aria-describedby="basic-addon1"
-          />
-        </div>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">Contraseña</span>
-          <input
-            type="password"
-            class="form-control"
-            formControlName="password"
-            placeholder="Contraseña"
-          />
-        </div>
-        <div class="d-grid">
-          <button type="submit" class="btn btn-primary text-white">
-            Ingresar
-          </button>
-        </div>
-      </form>
+  <div class="container my-xl-5" style="max-width: 500px">
+    <div *ngIf="isLogin" class="row my-4">
+      <div class="col d-grid align-items-center">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <h1 class="text-center">Iniciar Sesión</h1>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">@</span>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="username"
+              placeholder="Usuario"
+              aria-label="Usuario"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Contraseña</span>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+              placeholder="Contraseña"
+            />
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary text-white">
+              Ingresar
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
+
   <app-alert [alert]="alert"></app-alert>
 </div>
 <div *ngIf="!isLogin" class="container my-5">

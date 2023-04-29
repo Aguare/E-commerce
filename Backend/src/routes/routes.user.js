@@ -11,7 +11,6 @@ router.post("/add", async (req, res) => {
     delete user._id;
     console.log(user);
     const userSaved = await user.save();
-    //console.log(userSaved);
     const alert = createMessage(
       "Usuario registrado",
       "El usuario se ha registrado correctamente"

@@ -23,6 +23,7 @@ import { ListReportsComponent } from './Components/2Admin/list-reports/list-repo
 import { HomeCommonComponent } from './Components/1Common/home-common/home-common.component';
 import { MainHomeComponent } from './Components/General/main-home/main-home.component';
 import { RegisterProductComponent } from './Components/1Common/register-product/register-product.component';
+import { ListProductUserComponent } from './Components/1Common/list-product-user/list-product-user.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { RegisterProductComponent } from './Components/1Common/register-product/
     HomeCommonComponent,
     MainHomeComponent,
     RegisterProductComponent,
+    ListProductUserComponent,
   ],
   imports: [
     BrowserModule,
