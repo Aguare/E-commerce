@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">E-commerce</a>
+    <a class="navbar-brand" href="/common/home">E-commerce</a>
     <button
       class="navbar-toggler d-lg-none"
       type="button"
@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse flex-row" id="collapsibleNavId">
       <ul class="navbar-nav me-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#"
+          <a class="nav-link" href="/common/list-orders"
             ><i class="bi bi-box-seam"></i> Pedidos</a
           >
         </li>
@@ -32,7 +32,7 @@
           >
           <div class="dropdown-menu" aria-labelledby="dropdownId">
             <a class="dropdown-item" href="/common/list-products">Ver</a>
-            <a class="dropdown-item" href="/common/register-product"
+            <a class="dropdown-item" href="/common/register-product/new"
               >Registrar</a
             >
           </div>
@@ -56,9 +56,19 @@
           </button>
         </div>
       </form>
-      <button type="button" class="btn btn-outline-warning ms-3">
+      <a
+        type="button"
+        class="btn btn-outline-warning position-relative ms-2 me-2"
+        href="/common/shop-cart"
+      >
         <i class="bi bi-cart4 text-warning"></i>
-      </button>
+        <span
+          *ngIf="products > 0"
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+        >
+          {{ products }}
+        </span>
+      </a>
       <app-logout></app-logout>
     </div>
   </div>

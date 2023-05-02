@@ -1,0 +1,75 @@
+<div class="container w-75 my-5">
+  <div class="row">
+    <div class="col">
+      <img
+        [src]="this.product.image"
+        class="img-fluid"
+        height="300px"
+        width="300px"
+      />
+    </div>
+    <div class="col">
+      <div class="text-center">
+        <h2 class="align-middle">
+          {{ this.product.name }}
+        </h2>
+      </div>
+      <div class="container">
+        <p class="text-justify">{{ this.product.description }}</p>
+        <figcaption class="blockquote-footer">
+          <cite title="Source Title">{{
+            this.product.user_seller?.username
+          }}</cite>
+        </figcaption>
+        <h4 class="">
+          <span class="badge bg-primary">{{
+            this.product.price | currency : "Q"
+          }}</span>
+        </h4>
+        <p>
+          <span class="badge bg-info">
+            Disponible
+            {{ this.product.stock }}
+          </span>
+        </p>
+      </div>
+      <div
+        *ngIf="this.product.allowed == 3 && this.product.stock >= 1"
+        class="container my-5"
+      >
+        <button
+          class="btn btn-success"
+          data-bs-toggle="modal"
+          (click)="addToCart()"
+          data-bs-target="#exampleModal"
+        >
+          <i class="bi bi-bag-plus-fill"></i> Añadir al carrito
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Carrito de Compras</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="refresh()"
+        ></button>
+      </div>
+      <div class="modal-body"><app-alert [alert]="alert"></app-alert></div>
+    </div>
+  </div>
+</div>

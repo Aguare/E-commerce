@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { User } from "../Models/User";
+import { Product } from "../Models/Product";
+import { Order } from "../Models/Order";
 
 @Injectable({
   providedIn: "root",
@@ -29,5 +31,17 @@ export class StorageService {
 
   getUser(): User {
     return JSON.parse(`${this.get("user")}`);
+  }
+
+  getCart(): Order {
+    return JSON.parse(`${this.get("cart")}`);
+  }
+
+  saveCart(cart: Order) {
+    this.add(cart, "cart");
+  }
+
+  clearCart() {
+    this.remove("cart");
   }
 }

@@ -32,14 +32,28 @@
     </div>
     <div class="col my-3">
       <div class="mb-3">
-        <label for="validationServer01" class="form-label">Imagen</label>
+        <label *ngIf="isUpdate" for="validationServer01" class="form-label"
+          >Seleccione una imagen para cambiar la actual</label
+        >
         <input
           class="form-control form-control"
           formControlName="image"
           (change)="getPath($event)"
           accept="image/*"
           type="file"
-          required
+        />
+      </div>
+    </div>
+    <div *ngIf="isUpdate" class="col my-3">
+      <label *ngIf="isUpdate" for="validationServer01" class="form-label"
+        >Imagen Actual</label
+      >
+      <div class="container mb-3" style="max-width: 300px">
+        <img
+          [src]="this.product.image"
+          class="img-fluid"
+          height="300px"
+          width="300px"
         />
       </div>
     </div>
@@ -84,9 +98,9 @@
         <option value="Otros">Otros</option>
       </select>
     </div>
-
     <div class="col d-grid my-3">
       <button class="btn btn-success" type="submit">Registrar</button>
     </div>
   </form>
+  <app-alert [alert]="alert"></app-alert>
 </div>

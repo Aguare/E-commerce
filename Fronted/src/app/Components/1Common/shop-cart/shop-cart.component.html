@@ -1,0 +1,86 @@
+<div *ngIf="!isBuy" class="container w-75 my-5">
+  <div class="text-center">
+    <h2>Listado de Productos</h2>
+  </div>
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table table-light text-center">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Eliminar</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Sub-Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="total == 0">
+            <td colspan="6">No hay productos seleccionados</td>
+          </tr>
+          <tr
+            *ngFor="let p of productOrder"
+            class="align-middle align-items-center"
+          >
+            <th>
+              <button
+                type="button"
+                class="btn btn-outline-primary btn-sm"
+                (click)="deleteProduct(p)"
+              >
+                <i class="bi bi-x-circle"></i>
+              </button>
+            </th>
+            <th>
+              <img
+                [src]="p.product.image"
+                class="img-fluid rounded"
+                height="52px"
+                width="52px"
+              />
+            </th>
+            <th>{{ p.product.name }}</th>
+            <th class="col-1">
+              <input
+                type="number"
+                class="form-control"
+                [max]="p.product.stock"
+                [min]="1"
+                [value]="p.quantity"
+                (change)="updateQuantity(p, $event)"
+              />
+            </th>
+            <th>{{ p.product.price | currency : "Q" }}</th>
+            <th>{{ p.quantity * p.product.price | currency : "Q" }}</th>
+          </tr>
+          <tr *ngIf="total != 0" class="table-secondary border">
+            <td colspan="5" class="text-end"><h5>Total</h5></td>
+            <td>{{ total | currency : "Q" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="container w-50">
+    <div class="row">
+      <div class="col">
+        <button
+          class="btn btn-danger"
+          [disabled]="total == 0"
+          (click)="clear()"
+        >
+          <i class="bi bi-trash"></i> Cancelar
+        </button>
+      </div>
+      <div class="col">
+        <button class="btn btn-success" [disabled]="total == 0" (click)="buy()">
+          <i class="bi bi-cart-check"></i> Comprar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="isBuy" class="my-5">
+  <app-confirm-order></app-confirm-order>
+</div>

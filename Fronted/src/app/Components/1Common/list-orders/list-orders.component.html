@@ -1,0 +1,58 @@
+<div class="container w-75 my-5">
+  <div class="text-center">
+    <h2>Mis Pedidos</h2>
+    <label
+      >La fecha de entrega es un aproximado de 5 días, este dato puede
+      variar</label
+    >
+  </div>
+  <div class="table-responsive">
+    <table class="table table-light text-center">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Entrega</th>
+          <th scope="col">Estado</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let or of orders">
+          <td>{{ or._id }}</td>
+          <td>{{ transformDate(or.createdAt) }}</td>
+          <td>{{ transformDate(or.date_delivered) }}</td>
+          <td [ngSwitch]="or.status">
+            <span
+              *ngSwitchCase="'delivered'"
+              class="badge rounded-pill text-bg-success"
+            >
+              <i class="bi bi-check-lg"></i> Entregado</span
+            >
+            <span
+              *ngSwitchCase="'pending'"
+              class="badge rounded-pill text-bg-warning"
+            >
+              <i class="bi bi-truck"></i> En Camino</span
+            >
+            <span
+              *ngSwitchCase="'canceled'"
+              class="badge rounded-pill text-bg-danger"
+            >
+              <i class="bi bi-x"></i> Cancelado</span
+            >
+          </td>
+          <td>
+            <a
+              href="/common/view-order/{{ or._id }}"
+              type="button"
+              class="btn btn-sm btn-outline-info"
+            >
+              Ver
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

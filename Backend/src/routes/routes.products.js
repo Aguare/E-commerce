@@ -57,7 +57,7 @@ router.get("/allProducts", async (req, res) => {
 
 router.get("/get/:id", async (req, res) => {
   const { id } = req.params;
-  const product = await Product.findById(id);
+  const product = await Product.findById(id).populate("user_seller").exec();
   res.send(product);
 });
 

@@ -1,0 +1,118 @@
+<div class="container w-75 my-5">
+  <app-alert [alert]="alert"></app-alert>
+  <div class="text-center">
+    <h2>Pedido: {{ order._id }}</h2>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-light text-center">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Producto</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody class="align-middle">
+        <tr *ngFor="let p of order.products">
+          <td>
+            <img
+              class="rounded"
+              src="{{ p.product.image }}"
+              style="max-width: 52px"
+            />
+          </td>
+          <td>{{ p.product.name }}</td>
+          <td>{{ p.quantity }}</td>
+          <td>{{ p.product.price | currency : "Q" }}</td>
+          <td>{{ p.product.price * p.quantity | currency : "Q" }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" class="text-end">Total</td>
+          <td>{{ order.total | currency : "Q" }}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <div class="container w-75 align-middle">
+    <div class="text-center">
+      <h3>Información</h3>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item">
+        Realizado: {{ transformDate(order.createdAt) }}
+      </li>
+      <li class="list-group-item">
+        Entrega Aproximada: {{ transformDate(order.date_delivered) }}
+      </li>
+      <li [ngSwitch]="order.status" class="list-group-item">
+        Estado:
+        <span
+          *ngSwitchCase="'delivered'"
+          class="badge rounded-pill text-bg-success"
+        >
+          <i class="bi bi-check-lg"></i> Entregado</span
+        >
+        <span
+          *ngSwitchCase="'pending'"
+          class="badge rounded-pill text-bg-warning"
+        >
+          <i class="bi bi-truck"></i> En Camino</span
+        >
+        <span
+          *ngSwitchCase="'canceled'"
+          class="badge rounded-pill text-bg-danger"
+        >
+          <i class="bi bi-x"></i> Cancelado</span
+        >
+      </li>
+      <li class="list-group-item">Dirección: {{ order.address }}</li>
+    </ul>
+    <div class="container align-middle text-center my-4">
+      <button
+        type="button"
+        class="btn btn-danger"
+        [disabled]="order.status == 'canceled' || order.status == 'delivered'"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Cancelar Pedido
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cancelar Pedido</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">¿Está seguro de cancelar el pedido?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+          No
+        </button>
+        <button type="button" class="btn btn-danger" (click)="cancelOrder()">
+          Si, cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

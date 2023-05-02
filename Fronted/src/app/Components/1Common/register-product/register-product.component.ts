@@ -22,11 +22,11 @@ export class RegisterProductComponent {
     this.storage.getUser(),
     "",
     "",
+    0,
+    0,
+    1,
     "",
-    0,
-    0,
-    false,
-    ""
+    new Date()
   );
 
   constructor(
@@ -42,6 +42,13 @@ export class RegisterProductComponent {
         (res) => {
           this.product = res;
           this.isUpdate = true;
+          this.registerForm.patchValue({
+            name: this.product.name,
+            description: this.product.description,
+            price: this.product.price,
+            stock: this.product.stock,
+            category: this.product.category,
+          });
         },
         (err) => {
           this.alert = new Alert(
@@ -68,7 +75,7 @@ export class RegisterProductComponent {
     this.registerForm = this.fb.group({
       name: ["", [Validators.required, Validators.minLength(4)]],
       description: ["", [Validators.required, Validators.minLength(5)]],
-      image: ["", [Validators.required]],
+      image: [],
       price: [
         "",
         [Validators.required, Validators.min(1), Validators.max(999999999999)],
@@ -90,10 +97,6 @@ export class RegisterProductComponent {
 
   register() {
     const fileInput = this.registerForm.get("image")?.value;
-    if (fileInput != null) {
-      console.log(fileInput);
-    }
-
     if (this.registerForm.valid) {
       this.product.name = this.registerForm.value.name;
       this.product.description = this.registerForm.value.description;
@@ -101,6 +104,18 @@ export class RegisterProductComponent {
       this.product.stock = this.registerForm.value.stock;
       this.product.category = this.registerForm.get("category")?.value;
       if (this.isUpdate) {
+        if (fileInput != "") {
+          const formData = new FormData();
+          formData.append("image", fileInput);
+          this.consult.uploadImage(formData).subscribe(
+            (res) => {
+              this.product.image = res.message;
+            },
+            (err) => {
+              this.alert = err;
+            }
+          );
+        }
         this.consult.updateProduct(this.product).subscribe(
           (res) => {
             this.alert = new Alert(

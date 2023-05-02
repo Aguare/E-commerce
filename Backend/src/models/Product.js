@@ -12,8 +12,9 @@ const productSchema = new Schema(
     price: Number,
     stock: Number,
     allowed: {
-      type: Boolean,
-      default: false,
+      type: String,
+      enum: ["En Revisión", "Rechazado", "Aceptado"],
+      default: "En Revisión",
     },
     category: String,
   },

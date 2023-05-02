@@ -2,69 +2,49 @@
   <div class="text-center">
     <h1>Mis Productos Registrados</h1>
   </div>
+  <app-alert [alert]="alert"></app-alert>
   <div class="table-responsive">
     <table class="table table-light text-center">
       <thead>
         <tr class="table-dark">
-          <th scope="col">No</th>
-          <th scope="col">Nombre del Producto</th>
-          <th scope="col">Fecha de Ingreso</th>
+          <th scope="col">Producto</th>
+          <th scope="col">Precio</th>
           <th scope="col">Estado</th>
+          <th scope="col">Ingreso</th>
           <th scope="col" colspan="2">Opciones</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="align-middle">
-          <td>1</td>
-          <td>Ejemplo de nombre de producto</td>
-          <td>24/09/2023</td>
-          <td>
-            <span class="badge rounded-pill text-bg-info text-white"
-              >En revisión</span
+        <tr *ngFor="let p of products" class="align-middle">
+          <td>{{ p.name }}</td>
+          <td>{{ p.price }}</td>
+          <td [ngSwitch]="p.allowed">
+            <span
+              *ngSwitchCase="1"
+              class="badge rounded-pill text-bg-info text-white"
             >
-          </td>
-          <td>
-            <a type="button" class="btn btn-sm btn-outline-warning px-2">
-              Editar
-            </a>
-          </td>
-          <td>
-            <a type="button" class="btn btn-sm btn-outline-danger">
-              Eliminar
-            </a>
-          </td>
-        </tr>
-        <tr class="align-middle">
-          <td>1</td>
-          <td>Ejemplo de nombre de producto</td>
-          <td>24/09/2023</td>
-          <td>
-            <span class="badge rounded-pill text-bg-success text-white"
-              >Aceptado</span
+              En revisión
+            </span>
+            <span
+              *ngSwitchCase="2"
+              class="badge rounded-pill text-bg-danger text-white"
             >
-          </td>
-          <td>
-            <a type="button" class="btn btn-sm btn-outline-warning px-2">
-              Editar
-            </a>
-          </td>
-          <td>
-            <a type="button" class="btn btn-sm btn-outline-danger">
-              Eliminar
-            </a>
-          </td>
-        </tr>
-        <tr class="align-middle">
-          <td>1</td>
-          <td>Ejemplo de nombre de producto</td>
-          <td>24/09/2023</td>
-          <td>
-            <span class="badge rounded-pill text-bg-danger text-white"
-              >Rechazado</span
+              Rechazado
+            </span>
+            <span
+              *ngSwitchCase="3"
+              class="badge rounded-pill text-bg-success text-white"
             >
+              Aceptado
+            </span>
           </td>
+          <td>{{ transformDate(p.createdAt) }}</td>
           <td>
-            <a type="button" class="btn btn-sm btn-outline-warning px-2">
+            <a
+              type="button"
+              href="/common/register-product/{{ p._id }}"
+              class="btn btn-sm btn-outline-warning px-2"
+            >
               Editar
             </a>
           </td>

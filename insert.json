@@ -45,3 +45,119 @@
   "allowed": false,
   "categorys": ["613a9c3d4f8a4d83c2aeffbb", "613a9c3d4f8a4d83c2aeffbd"]
 }
+-- Direcciones
+[
+  {
+    "nombre": "San Marcos",
+    "municipios": [
+      "San Marcos",
+      "San Pedro Sacatepéquez",
+      "Comitancillo",
+      "San Antonio Sacatepéquez",
+      "Concepción Tutuapa",
+      "Tacaná",
+      "Sibinal",
+      "Tajumulco",
+      "Tejutla",
+      "Ixtahuacán",
+      "San José Ojetenam",
+      "San Cristóbal Cucho",
+      "Sipacapa",
+      "Esquipulas Palo Gordo",
+      "Río Blanco",
+      "San Lorenzo",
+      "La Blanca",
+      "El Tumbador",
+      "Nuevo Progreso",
+      "Santo Domingo",
+      "San Felipe",
+      "El Rodeo"
+    ]
+  },
+  {
+    "nombre": "Quetzaltenango",
+    "municipios": [
+      "Quetzaltenango",
+      "Salcajá",
+      "Olintepeque",
+      "San Carlos Sija",
+      "Sibilia",
+      "Cabricán",
+      "Cajolá",
+      "San Miguel Siguilá",
+      "Ostuncalco",
+      "San Mateo",
+      "Concepción Chiquirichapa",
+      "San Martín Sacatepéquez",
+      "Almolonga",
+      "Cantel",
+      "Huitán",
+      "Zunil",
+      "Colomba",
+      "San Francisco La Unión",
+      "El Palmar",
+      "Coatepeque",
+      "Génova",
+      "Flores Costa Cuca",
+      "La Esperanza"
+    ]
+  },
+  {
+    "nombre": "Guatemala",
+    "municipios": [
+      "Guatemala",
+      "Santa Catarina Pinula",
+      "San José Pinula",
+      "San José del Golfo",
+      "Palencia",
+      "Chinautla",
+      "San Pedro Ayampuc",
+      "Mixco",
+      "San Pedro Sacatepéquez",
+      "San Juan Sacatepéquez",
+      "San Raymundo",
+      "Chuarrancho",
+      "Fraijanes",
+      "Amatitlán",
+      "Villa Nueva",
+      "Villa Canales",
+      "Petapa"
+    ]
+  }
+]
+
+-- CARDS
+[
+  {
+    "number": 1234567890123456,
+    "owner": "644d7ecc1fe7582cb1ff8026",
+    "name": "Juan Perez",
+    "cvv": 123,
+    "expiration_mont": 10,
+    "expiration_year": 2025
+  },
+  {
+    "number": 9876543210987654,
+    "owner": "644d7ecc1fe7582cb1ff8026",
+    "name": "Maria Garcia",
+    "cvv": 456,
+    "expiration_mont": 8,
+    "expiration_year": 2024
+  },
+  {
+    "number": 1111222233334444,
+    "owner": "644d7ecc1fe7582cb1ff8026",
+    "name": "Pedro Ramirez",
+    "cvv": 789,
+    "expiration_mont": 12,
+    "expiration_year": 2026
+  },
+  {
+    "number": 5555666677778888,
+    "owner": "644d7ecc1fe7582cb1ff8026",
+    "name": "Ana Hernandez",
+    "cvv": 321,
+    "expiration_mont": 6,
+    "expiration_year": 2023
+  }
+]
