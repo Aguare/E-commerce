@@ -35,6 +35,14 @@ router.put("/update", async (req, res) => {
   }
 });
 
+router.put("/updateAllowed", async (req, res) => {
+  try {
+    const { id, allowed } = req.body;
+  } catch (error) {
+    const al = createAlert(error);
+  }
+});
+
 router.delete("/delete/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -64,6 +72,13 @@ router.get("/get/:id", async (req, res) => {
 router.get("/allProductsByUser/:id", async (req, res) => {
   const { id } = req.params;
   const products = await Product.find({ user_seller: { $in: [id] } });
+  res.send(products);
+});
+
+router.get("/allProductsByStatusPending", async (req, res) => {
+  const products = await Product.find({ allowed: { $in: [1] } }).populate(
+    "user_seller"
+  );
   res.send(products);
 });
 
