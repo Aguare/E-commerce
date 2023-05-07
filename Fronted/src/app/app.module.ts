@@ -34,6 +34,11 @@ import { ListProductsApproveComponent } from './Components/3Parcel/list-products
 import { ListOrderPendingComponent } from './Components/3Parcel/list-order-pending/list-order-pending.component';
 import { EditOrderComponent } from './Components/3Parcel/edit-order/edit-order.component';
 import { EditProductComponent } from './Components/3Parcel/edit-product/edit-product.component';
+import { Report1Component } from './Components/2Admin/Reports/report1/report1.component';
+import { Report2Component } from './Components/2Admin/Reports/report2/report2.component';
+import { Report3Component } from './Components/2Admin/Reports/report3/report3.component';
+import { Report4Component } from './Components/2Admin/Reports/report4/report4.component';
+import { Report5Component } from './Components/2Admin/Reports/report5/report5.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +71,11 @@ import { EditProductComponent } from './Components/3Parcel/edit-product/edit-pro
     ListOrderPendingComponent,
     EditOrderComponent,
     EditProductComponent,
+    Report1Component,
+    Report2Component,
+    Report3Component,
+    Report4Component,
+    Report5Component,
   ],
   imports: [
     BrowserModule,

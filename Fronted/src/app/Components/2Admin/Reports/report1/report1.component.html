@@ -1,0 +1,60 @@
+<div class="container w-75 my-5">
+  <div class="text-center">
+    <h3>Top 10 Productos más vendidos en Intervalo de Tiempo</h3>
+  </div>
+  <div class="container w-50">
+    <div class="row">
+      <div class="col">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Fecha Inicio</label
+          >
+          <input type="date" class="form-control" [(ngModel)]="dateInit" />
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Fecha final</label
+          >
+          <input type="date" class="form-control" [(ngModel)]="dateEnd" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-success" (click)="generate()">
+          Generar Reporte
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-warning ms-4" (click)="clear()">
+          Limpiar Fechas
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="container my-5">
+    <div class="table-responsive">
+      <table class="table table-light text-center">
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">Producto</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Ventas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="data.length == 0">
+            <td colspan="3">No hay datos para mostrar</td>
+          </tr>
+          <tr *ngFor="let p of data">
+            <td>{{ p.name }}</td>
+            <td>{{ p.price | currency : "Q" }}</td>
+            <td>{{ p.totalQuantity }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

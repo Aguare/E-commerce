@@ -18,6 +18,11 @@ import { ListOrdersComponent } from "./Components/1Common/list-orders/list-order
 import { ViewOrderComponent } from "./Components/1Common/view-order/view-order.component";
 import { ListOrderPendingComponent } from "./Components/3Parcel/list-order-pending/list-order-pending.component";
 import { ListProductsApproveComponent } from "./Components/3Parcel/list-products-approve/list-products-approve.component";
+import { Report1Component } from "./Components/2Admin/Reports/report1/report1.component";
+import { Report2Component } from "./Components/2Admin/Reports/report2/report2.component";
+import { Report3Component } from "./Components/2Admin/Reports/report3/report3.component";
+import { Report4Component } from "./Components/2Admin/Reports/report4/report4.component";
+import { Report5Component } from "./Components/2Admin/Reports/report5/report5.component";
 
 const routes: Routes = [
   {
@@ -48,6 +53,11 @@ const routes: Routes = [
       { path: "register-user/:id", component: RegisterUserComponent },
       { path: "list-user", component: ListUsersComponent },
       { path: "list-reports", component: ListReportsComponent },
+      { path: "report1", component: Report1Component },
+      { path: "report2", component: Report2Component },
+      { path: "report3", component: Report3Component },
+      { path: "report4", component: Report4Component },
+      { path: "report5", component: Report5Component },
     ],
   },
   {

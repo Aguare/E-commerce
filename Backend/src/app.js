@@ -4,6 +4,7 @@ import indexRoutes from "./routes/routes.js";
 import userRoutes from "./routes/routes.user.js";
 import productRoutes from "./routes/routes.products.js";
 import orderRoutes from "./routes/routes.order.js";
+import adminRoutes from "./routes/routes.admin.js";
 import path from "path";
 import multer from "multer";
 import { v4 as uuid } from "uuid";
@@ -50,5 +51,6 @@ app.use(indexRoutes);
 app.use("/user", userRoutes);
 app.use("/product", productRoutes);
 app.use("/order", orderRoutes);
+app.use("/admin", adminRoutes);
 
 export default app;

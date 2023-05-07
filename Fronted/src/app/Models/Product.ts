@@ -1,11 +1,11 @@
-import { User } from './User';
+import { User } from "./User";
 
 export class Product {
   _id?: string;
   name: string;
   user_seller?: User;
   description: string;
-  image?: string;
+  image: string;
   price: number;
   stock: number;
   allowed: number;

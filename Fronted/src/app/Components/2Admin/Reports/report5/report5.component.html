@@ -1,0 +1,28 @@
+<div class="container w-75 my-5">
+  <div class="text-center">
+    <h3>Top 10 clientes que más productos tienen a la venta</h3>
+  </div>
+  <div class="container my-5">
+    <div class="table-responsive">
+      <table class="table table-light text-center">
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">Usuario</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Productos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="data.length == 0">
+            <td colspan="3">No hay datos para mostrar</td>
+          </tr>
+          <tr *ngFor="let p of data">
+            <td>{{ p.username }}</td>
+            <td>{{ p.name }}</td>
+            <td>{{ p.totalProducts }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

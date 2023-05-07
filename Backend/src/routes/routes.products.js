@@ -63,6 +63,11 @@ router.get("/allProducts", async (req, res) => {
   res.send(products);
 });
 
+router.get("/getCarouselProducts", async (req, res) => {
+  const products = await Product.find({ allowed: 3 }).limit(10);
+  res.send(products);
+});
+
 router.get("/get/:id", async (req, res) => {
   const { id } = req.params;
   const product = await Product.findById(id).populate("user_seller").exec();

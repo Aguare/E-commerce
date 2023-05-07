@@ -8,43 +8,465 @@
     "phone": "12345678"
 }
 -- PRODUCTOS
+[
+
 {
-  "name": "Laptop Dell Inspiron 15 5000",
-  "description": "Laptop Dell Inspiron 15 5000",
-  "price": 1000,
-  "category": ["Laptops" ,"Dell", "Inspiron"] ,
-  "image": "https://www.dell.com/support/home/us/en/04/product-support/product/inspiron-15-5000-laptop/drivers"
+  "name": "Controlador de movimiento DJI para FPV",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Permite que la aeronave maniobre en función de los movimientos naturales de sus manos.",
+  "image": "http://localhost:3000/img/products/FC7BMC-1000X1000-2-768x768.jpg",
+  "price": 1309.00,
+  "stock": 2,
+  "allowed": 3,
+  "category": "Tecnología"
 }
+
 {
-  "name": "Audífonos inalámbricos Bose QuietComfort 35 II",
-  "user_seller": "613a9c3d4f8a4d83c2aeffba",
-  "description": "Audífonos inalámbricos con cancelación de ruido, Bluetooth y micrófono integrado.",
-  "image": "https://images-na.ssl-images-amazon.com/images/I/71%2B1rM5J5wL._AC_SL1500_.jpg",
-  "price": 299.99,
-  "stock": 50,
-  "allowed": false,
-  "categorys": ["613a9c3d4f8a4d83c2aeffbb"]
-},
-{
-  "name": "Apple iPad Pro 11 pulgadas",
-  "user_seller": "613a9c3d4f8a4d83c2aeffbb",
-  "description": "Tableta con pantalla Liquid Retina de 11 pulgadas, procesador A12Z Bionic, cámara trasera y frontal de 12 MP y Wi-Fi + Cellular.",
-  "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-11-select-cell-spacegray-202003_FMT_WHH?wid=940&hei=1112&fmt=png-alpha&.v=1583553703699",
-  "price": 799.00,
-  "stock": 20,
-  "allowed": false,
-  "categorys": ["613a9c3d4f8a4d83c2aeffbc"]
-},
-{
-  "name": "Samsung Galaxy S21 Ultra",
-  "user_seller": "613a9c3d4f8a4d83c2aeffbc",
-  "description": "Teléfono inteligente con pantalla AMOLED de 6.8 pulgadas, procesador Exynos 2100, cámara trasera de 108 MP y batería de 5000 mAh.",
-  "image": "https://images.samsung.com/is/image/samsung/latin-galaxy-s21-ultra-5g-g988-sm-g998bzkscoa-frontphantomblack-282814421?$720_576_PNG$",
-  "price": 1199.99,
+  "name": "Pro Repetidor N300",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Una vez conectado con un enrutador existente, siempre obtiene una conexión confiable donde sea que vea la televisión, se ponga al día con las últimas series o comparta recuerdos felices con los niños a través de una videollamada.",
+  "image": "http://localhost:3000/img/products/KEMIK-MIWIFIPRO-1-768x768.jpg",
+  "price": 159.00,
   "stock": 10,
-  "allowed": false,
-  "categorys": ["613a9c3d4f8a4d83c2aeffbb", "613a9c3d4f8a4d83c2aeffbd"]
+  "allowed": 3,
+  "category": "Tecnología"
 }
+
+{
+  "name": "Kingston Tarjeta MicroSD de 128GB",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Optimizadas para uso con dispositivos Android, velocidades de UHS-I Clase 10 de hasta 100 MB/s. Formato: exFAT.",
+  "image": "http://localhost:3000/img/products/SDCS2_128GB-KINGSTON-1200x1200-1.-700x700.jpg",
+  "price": 79.00,
+  "stock": 50,
+  "allowed": 2,
+  "category": "Tecnología"
+}
+
+{
+  "name": "Audifonos Alambricos KHS",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Los auriculares KHS-851 de Klip Xtreme revelan la última tecnología en audio con cable. El Akoustik FX combina un diseño elegante con luz de plumas con un sonido real en auge entregado por los controladores de frecuencia de amplio rango de 40 mm. Con una diadema plegable y cojines aislantes de ruido, estos auriculares ofrecen lo mejor en diseño y rendimiento.",
+  "image": "http://localhost:3000/img/products/KHS-851x1-768x768.jpg",
+  "price": 100.00,
+  "stock": 25,
+  "allowed": 1,
+  "category": "Tecnología"
+}
+
+{
+  "name": "Kingston Memoria USB 3.2 32GB",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Alcanza un rendimiento de grado USB 3.2 Gen 1, que facilita el acceso a laptops, computadoras de escritorio, monitores y otros dispositivos digitales.",
+  "image": "http://localhost:3000/img/products/DTXM32GB-KINGSTON-1200x1200-1-1-768x768.-700x700.jpg",
+  "price": 162.00,
+  "stock": 10,
+  "allowed": 3,
+  "category": "Tecnología"
+}
+
+{
+  "name": "Basic Living Cama Para Mascota",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Cómoda y suave para favorecer el descanso de tu mascota 62x50x17cm Poliester Gris con Beige",
+  "image": "http://localhost:3000/img/products/basicliving-1101005000008-1200x1200-1-768x768.jpg",
+  "price": 29.00,
+  "stock": 15,
+  "allowed": 1,
+  "category": "Otros"
+}
+
+{
+  "name": "Cama Plástica Extra Pequeña para Perro",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Sólida e higiénica, la cama DOMUS para mascotas brinda más apoyo; La goma antideslizante mantiene el Domus en su lugar y la base estable evita que se vuelque.",
+  "image": "http://localhost:3000/img/products/H240-DOMUS-1200X1200-1-768x768.jpg",
+  "price": 120.00,
+  "stock": 15,
+  "allowed": 1,
+  "category": "Otros"
+}
+
+{
+  "name": "Bestway Steel Pro Piscina Familiar",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Es desmontable, puede soportar condiciones extremas, incluida la exposición a los rayos ultravioletas y al cloro. Es la mejor opción para un verano lleno de diversión en compañía de la familia y amigos.",
+  "image": "http://localhost:3000/img/products/670023-BESTWAY-1200X1200-1.-700x700.jpg",
+  "price": 999.00,
+  "stock": 8,
+  "allowed": 1,
+  "category": "Hogar"
+}
+
+{
+  "name": "Curso Intensivo de Inglés + Cd",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Se ha demostrado que un manual acompañado de un CD es el método perfecto para empezar a aprender un idioma o refrescar conocimientos. • 4 CD con diálogos auténticos y divertidos, así como ejercicios en forma de juegos y entrevistas para practicar la comprensión auditiva.",
+  "image": "http://localhost:3000/img/products/9783625002468-1200x1200-1.-700x700.jpg",
+  "price": 115.00,
+  "stock": 4,
+  "allowed": 3,
+  "category": "Académico"
+}
+
+{
+  "name": "Combañeros - Que Fieras!",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Este libro ayuda a enseñar los colores a los pequeños.Reconocer los colores es importante para las competencias artísticas del niño, además le ayuda a entender su entorno y a hablar de él porque utilizamos los colores a todas horas para explicar el mundo que nos rodea.",
+  "image": "http://localhost:3000/img/products/9788742551813-1200x1200-1.-700x700.jpg",
+  "price": 105.00,
+  "stock": 20,
+  "allowed": 3,
+  "category": "Académico"
+}
+
+{
+  "name": "Combañeros - Que Fieras!",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Este libro ayuda a enseñar los colores a los pequeños.Reconocer los colores es importante para las competencias artísticas del niño, además le ayuda a entender su entorno y a hablar de él porque utilizamos los colores a todas horas para explicar el mundo que nos rodea.",
+  "image": "http://localhost:3000/img/products/9788742551813-1200x1200-1.-700x700.jpg",
+  "price": 105.00,
+  "stock": 20,
+  "allowed": 3,
+  "category": "Académico"
+}
+
+{
+  "name": "El Legado Robado",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Han pasado ocho años desde la Batalla de la Serpiente, pero en el norte helado, Lady Nore de Court of Teeth ha reclamado la Ciudadela de Ice Spire. Allí utiliza una antigua reliquia para crear monstruos hechos de palos y nieve que seguirán sus órdenes y llevarán a cabo su venganza. Suren, la niña reina de la Corte de los Dientes y la única persona con poder sobre su madre, huyó al mundo humano, donde ahora vive como un animal en los bosques. ",
+  "image": "http://localhost:3000/img/products/9786077486329-1200x1200-1.-700x700.jpg",
+  "price": 149.00,
+  "stock": 10,
+  "allowed": 3,
+  "category": "LIteratura"
+}
+
+{
+  "name": "Un Inmueble al Año no Hace Daño",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Invertir en bienes raíces es fácil si uno dispone del dinero para ello. Pero para convertirlo en un negocio rentable el dinero no basta, se requiere conocimiento y actitud. Dicho en otras palabras, no se trata de lo que tengas en tu bolsillo, sino de lo que tengas en tu cabeza.",
+  "image": "http://localhost:3000/img/products/9798504965710-1200x1200-1.-700x700.jpg",
+  "price": 218.00,
+  "stock": 10,
+  "allowed": 3,
+  "category": "LIteratura"
+}
+
+{
+  "name": "Mibro Watch C2",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Pantalla HD de 1,69 pulgadas con resolución 240*280. Admite la gestión dinámica de la salud de la frecuencia cardíaca y el oxígeno en la sangre 20 modos de entrenamiento: Reconoce automáticamente el modo carrera y muestra datos de ejercicio en tiempo real.",
+  "image": "http://localhost:3000/img/products/6971619678024-RELOJ-MIBRO-C2-1200X1200-1.-700x700.jpg",
+  "price": 399.00,
+  "stock": 8,
+  "allowed": 3,
+  "category": "Tecnología"
+}
+
+{
+  "name": "SmartWatch Ultra N8",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Pantalla IPS de 2.0 pulgadas. Monitorización de frecuencia cardíaca, oxígeno en sangre y termómetro. Modos multideporte y resistente al agua IP68.",
+  "image": "http://localhost:3000/img/products/N8-SW-OR-1200x1200-1.-700x700.jpg",
+  "price": 549.00,
+  "stock": 8,
+  "allowed": 3,
+  "category": "Tecnología"
+}
+
+{
+  "name": "Combo Xiaomi Watch S1 + Smartband 2",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Xiaomi Watch S1: Acero Inoxidable con Correa de Cuero Café. Redmi Smart Band 2: Vibrante pantalla TFT de 1,47 Pantalla más grande para una vista más clara.",
+  "image": "http://localhost:3000/img/products/COMBO-REDMI-BAND2-IVORY-S1-CAF-1200X1200-1.-700x700.jpg",
+  "price": 1599.00,
+  "stock": 5,
+  "allowed": 3,
+  "category": "Tecnología"
+}
+
+{
+  "name": "Combo Xiaomi Watch S1 + Audífonos Redmi 2",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Xiaomi Watch S1 Acero Inoxidable con Correa de Cuero Negro: Cristal de zafiro Caja de acero inoxidable Correa de cuero. Xiaomi Redmi Buds 4 Audifonos Bluetooth Blanco: 3 opciones de nivel de ANC y modo ANC adaptativo",
+  "image": "http://localhost:3000/img/products/Combo-XIAOMI-WATCHS1-BLACK-BUDS4-WHITE-1200X1200-1.-700x700.jpg",
+  "price": 1599.00,
+  "stock": 5,
+  "allowed": 3,
+  "category": "Tecnología"
+}
+
+{
+  "name": "Combo Xiaomi Watch S1 + Audífonos Redmi Buds 4",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Xiaomi Watch S1 Acero Inoxidable con Correa de Cuero Negro: Cristal de zafiro Caja de acero inoxidable Correa de cuero. Xiaomi Redmi Buds 4 Audifonos Bluetooth Blanco: 3 opciones de nivel de ANC y modo ANC adaptativo.",
+  "image": "http://localhost:3000/img/products/Combo-XIAOMI-WATCHS1-BLACK-BUDS4-WHITE-1200X1200-1.-700x700.jpg",
+  "price": 1599.00,
+  "stock": 5,
+  "allowed": 3,
+  "category": "Tecnología"
+}
+
+{
+  "name": "Combo Xiaomi Watch 2 Lite + Watch 2 Lite",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Pantalla táctil HD a color de 1,55″. 10% más que el modelo anterior. Cambia libremente entre más de 100 esferas de reloj. Más de 100 modos de entrenamiento . Sigue tus ejercicios como un experto",
+  "image": "http://localhost:3000/img/products/XIAOMI-WATCH-2-LITE-BLACK-BEIGE-1200X1200-1.-700x7000.jpg",
+  "price": 699.00,
+  "stock": 2,
+  "allowed": 3,
+  "category": "Tecnología"
+}
+
+{
+  "name": "Popsis Poporopos Avainillados",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Perfecto snack bajo en grasa y lleno de sabor. Nadie se resiste a la exquisita dulce combinación de poporopos sabor a vainilla.",
+  "image": "http://localhost:3000/img/products/7406007091998-POPSIS-1200x1200-1.-700x700.jpg",
+  "price": 18.00,
+  "stock": 20,
+  "allowed": 3,
+  "category": "Otros"
+}
+
+{
+  "name": "Popsis Sabor Queso Cheddar",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Maíz a medio reventar, listo para comer. Saludable y delicioso.",
+  "image": "http://localhost:3000/img/products/7404007440044-POPSIS-1200x1200-1.-700x700.jpg",
+  "price": 11.00,
+  "stock": 25,
+  "allowed": 3,
+  "category": "Otros"
+}
+
+{
+  "name": "Frontera Chardonnay",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Es el vino ideal para acompañar pescados y mariscos en diferentes preparaciones, pastas, salsa de mantequilla o cremas",
+  "image": "http://localhost:3000/img/products/7804320642277-1200x1200-1.-700x700.jpg",
+  "price": 60.00,
+  "stock": 15,
+  "allowed": 3,
+  "category": "Otros"
+}
+
+{
+  "name": "Sartori Pinot Grigio Classico",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "De color pajizo pálido, con un bouquet frutal y cítrico muy delicado",
+  "image": "http://localhost:3000/img/products/8005390046166-1200x1200-1.-700x700.jpg",
+  "price": 128.00,
+  "stock": 10,
+  "allowed": 3,
+  "category": "Otros"
+}
+
+{
+  "name": "Baron Phillipe de Rothchild Mapu Gran Reserva, Chardonnay",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Es un delicioso vino amarillo brillante con ligeros reflejos verdosos, intenso en aromas de pera, lichi y melocotón con notas de avellanas ligeramente tostadas de la crianza en roble francés viejo.",
+  "image": "http://localhost:3000/img/products/7804462003219-1200x1200-1.-700x700.jpg",
+  "price": 107.00,
+  "stock": 18,
+  "allowed": 3,
+  "category": "Otros"
+}
+
+{
+  "name": "Columbia Crest Sauvignon",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Columbia Crest H3 Sauvignon Blanc abre con aromas cítricos y de frutas tropicales, seguido de un paladar suave con sabores de melón y muestra mineralidad y acidez picante en el final",
+  "image": "http://localhost:3000/img/products/088586003578-1200x1200-1.-700x700.jpg",
+  "price": 157.00,
+  "stock": 6,
+  "allowed": 3,
+  "category": "Otros"
+}
+
+{
+  "name": "Casillero del Diablo Chardonnay",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Este vino destaca por sus aromas a piña, durazno y cítricos, junto con suaves toques de avellana.",
+  "image": "http://localhost:3000/img/products/7804320256900-1200x1200-1.-700x700.jpg",
+  "price": 89.00,
+  "stock": 12,
+  "allowed": 3,
+  "category": "Otros"
+}
+
+{
+  "name": "INGCO Pistola De Calor",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Ideal para remover barnices y pinturas, decorar, mejorar el hogar, reciclar, descongelar tuberías congeladas, aflojar pernos oxidados, doblar plásticos y mucho más",
+  "image": "http://localhost:3000/img/products/UHG200038-INGCO-1200x1200-01.-700x700.jpg",
+  "price": 189.00,
+  "stock": 6,
+  "allowed": 3,
+  "category": "Otros"
+}
+
+{
+  "name": "DeWalt Sierra Caladora Orbital",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Potente motor de 600 Watts y velocidad variable que proporciona de 0-3100cpm.",
+  "image": "http://localhost:3000/img/products/DW317K-1200x1200-1.-700x700.jpg",
+  "price": 1533.82,
+  "stock": 3,
+  "allowed": 3,
+  "category": "Otros"
+}
+
+{
+  "name": "Emtop Dos Esmeriladoras de 4-1/2",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Diámetro del disco: 5 Motor con Potencia de entrada 900 Watts Un esmeril cuenta con control de velocidad variable.",
+  "image": "http://localhost:3000/img/products/ULAGRS09051-OF1-1200x1200-1.-700x700.jpg",
+  "price": 650.00,
+  "stock": 5,
+  "allowed": 3,
+  "category": "Otros"
+}
+
+{
+  "name": "Combo Barreno Percutor y Linterna + 2 Baterías 1.5",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Baterías compatibles con todas la herramientas 20V. Linterna con 140 Lumens para una buena iluminación en la hora de trabajo. Cargador 1.25 Ah para dar una buena carga a tus baterías.",
+  "image": "http://localhost:3000/img/products/SCDL711C2S-B3-1200x1200-1.-700x700.jpg",
+  "price": 1389.73,
+  "stock": 2,
+  "allowed": 3,
+  "category": "Otros"
+}
+
+{
+  "name": "Pulidora de 4-1/2 + 4 Discos",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Ideal para esmerilar y afilar metales. Perfecta para corte en mampostería, preparación de superficies, remoción de oxidación y exceso de soldadura. Utilización doméstica e Industrial.",
+  "image": "http://localhost:3000/img/products/G650K5-B3-1200x1200-1.-700x700.jpg",
+  "price": 316.68,
+  "stock": 2,
+  "allowed": 9,
+  "category": "Otros"
+}
+
+{
+  "name": "DJI Estabilizador para Cámaras Ronin RS3",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Con cada detalle, DJI RS 3 ofrece una experiencia de disparo flexible y eficiente para creadores en solitario y equipos independientes.",
+  "image": "http://localhost:3000/img/products/CP.RN_.00000216.03-DJI-RONIN-RS3-1200X1200-1-2-768x768.jpg",
+  "price": 4698.00,
+  "stock": 2,
+  "allowed": 3,
+  "category": "Otros"
+}
+
+{
+  "name": "Controlador de movimiento DJI para FPV",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Experimente un vuelo inmersivo como nunca antes con el controlador de movimiento DJI.",
+  "image": "http://localhost:3000/img/products/FC7BMC-1000X1000-2-768x768.jpg",
+  "price": 1309.00,
+  "stock": 2,
+  "allowed": 3,
+  "category": "Otros"
+}
+
+{
+  "name": "Laptop HP Pavilion 15",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Intel Core i5-1135G7 8GB RAM 256GB SSD 15.6 Win11 Home.",
+  "image": "http://localhost:3000/img/products/6R3V1LAABM-HP-1200x1200-1-768x768.-700x700.jpg",
+  "price": 4876.00,
+  "stock": 6,
+  "allowed": 3,
+  "category": "Tecnología"
+}
+
+{
+  "name": "Laptop Lenovo IdeaPad 3",
+  "user_seller": {
+    "$oid":
+  },
+  "description": "Procesador Intel Core i5-1135G7 con velocidad de hasta 4,20 GHz. 8GB RAM + 512GB SSD 14 Win11 Home.",
+  "image": "http://localhost:3000/img/products/82H7019GGJ-LENOVO-1200X1200-1.-700x700.jpg",
+  "price": 5486.00,
+  "stock": 4,
+  "allowed": 3,
+  "category": "Tecnología"
+}
+]
+
+
 -- Direcciones
 [
   {
@@ -126,38 +548,3 @@
   }
 ]
 
--- CARDS
-[
-  {
-    "number": 1234567890123456,
-    "owner": "644d7ecc1fe7582cb1ff8026",
-    "name": "Juan Perez",
-    "cvv": 123,
-    "expiration_mont": 10,
-    "expiration_year": 2025
-  },
-  {
-    "number": 9876543210987654,
-    "owner": "644d7ecc1fe7582cb1ff8026",
-    "name": "Maria Garcia",
-    "cvv": 456,
-    "expiration_mont": 8,
-    "expiration_year": 2024
-  },
-  {
-    "number": 1111222233334444,
-    "owner": "644d7ecc1fe7582cb1ff8026",
-    "name": "Pedro Ramirez",
-    "cvv": 789,
-    "expiration_mont": 12,
-    "expiration_year": 2026
-  },
-  {
-    "number": 5555666677778888,
-    "owner": "644d7ecc1fe7582cb1ff8026",
-    "name": "Ana Hernandez",
-    "cvv": 321,
-    "expiration_mont": 6,
-    "expiration_year": 2023
-  }
-]
