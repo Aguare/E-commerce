@@ -99,7 +99,6 @@ export class ConfirmOrderComponent {
       );
     } else {
       if (this.isAddCard) {
-        alert("Compra con tarjeta nueva");
         let nCard = new Card(
           "",
           this.cardNumber,
@@ -118,20 +117,18 @@ export class ConfirmOrderComponent {
           this.consult.registerCard(nCard).subscribe(
             (res) => {
               this.selectedCardOb = res;
-              if (res._id) {
-                this.order.card = res._id;
+              if (this.selectedCardOb._id) {
+                this.order.card = this.selectedCardOb._id;
               }
-              if (this.alert.type == "success") {
-                this.consult.registerOrder(this.order).subscribe(
-                  (res) => {
-                    this.alert = res;
-                    this.storage.clearCart();
-                  },
-                  (err) => {
-                    this.alert = err.error;
-                  }
-                );
-              }
+              this.consult.registerOrder(this.order).subscribe(
+                (res) => {
+                  this.alert = res;
+                  this.storage.clearCart();
+                },
+                (err) => {
+                  this.alert = err.error;
+                }
+              );
             },
             (err) => {
               this.alert = err.error;
@@ -147,7 +144,6 @@ export class ConfirmOrderComponent {
           );
         }
       } else {
-        alert("Compra con tarjeta ya registrada");
         if (this.selectedCardOb._id) {
           this.order.card = this.selectedCardOb._id;
         }

@@ -64,7 +64,7 @@ router.get("/allProducts", async (req, res) => {
 });
 
 router.get("/getCarouselProducts", async (req, res) => {
-  const products = await Product.find({ allowed: 3 }).limit(10);
+  const products = await Product.find({ allowed: 3 }).limit(15);
   res.send(products);
 });
 
@@ -84,6 +84,29 @@ router.get("/allProductsByStatusPending", async (req, res) => {
   const products = await Product.find({ allowed: { $in: [1] } }).populate(
     "user_seller"
   );
+  res.send(products);
+});
+
+//search products by name, by categorys, by price in order asc or desc
+router.get("/search", async (req, res) => {
+  const { name, categorys, price } = req.query;
+  const categoriesArr = categorys ? categorys.split(",") : [];
+
+  const query = {
+    allowed: 3,
+    price: { $lte: parseInt(price) || Number.MAX_SAFE_INTEGER },
+  };
+
+  if (name) {
+    query.name = { $regex: name, $options: "i" };
+  }
+
+  if (categoriesArr.length > 0) {
+    query.category = { $in: categoriesArr };
+  }
+
+  const products = await Product.find(query).sort({ price: -1 });
+
   res.send(products);
 });
 

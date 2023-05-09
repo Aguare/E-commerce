@@ -17,7 +17,6 @@
     <label class="btn btn-outline-primary" for="btnradio1"
       >Iniciar Sesión</label
     >
-
     <input
       type="radio"
       class="btn-check"
@@ -32,8 +31,11 @@
     <div *ngIf="isLogin" class="row my-4">
       <div class="col d-grid align-items-center">
         <form [formGroup]="loginForm" (ngSubmit)="login()">
-          <h1 class="text-center">Iniciar Sesión</h1>
-          <div class="input-group mb-3">
+          <div class="text-center">
+            <h1>Iniciar Sesión</h1>
+            <label>Inicia sesión para poder comprar</label>
+          </div>
+          <div class="input-group mb-3 my-3">
             <span class="input-group-text" id="basic-addon1">@</span>
             <input
               type="text"

@@ -24,15 +24,13 @@ export class CarouselProductsComponent {
       perMove: 1,
       gap: "0",
       padding: {
-        right: "1px",
-        left: "1px",
+        right: "0px",
+        left: "0px",
       },
-      width: "100%",
       pagination: false,
       arrows: true,
       autoplay: true,
       interval: 5000,
-      focus: "center",
     });
     splide.mount();
   }

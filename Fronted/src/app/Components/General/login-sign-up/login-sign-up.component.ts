@@ -42,21 +42,21 @@ export class LoginSignUpComponent {
       this.user.password = this.loginForm.value.password;
       this.consult.validateUser(this.user).subscribe(
         (correct: any) => {
-          if (correct._id != "") {
+          if (correct._id) {
             this.storage.add(correct, "user");
             this.redirect.redirectLogin();
           } else {
-            this.alert = correct;
+            this.alert = new Alert(
+              "Error",
+              "El usuario o la contraseña son incorrectos",
+              "danger",
+              true,
+              404
+            );
           }
         },
         (error: any) => {
-          this.alert = new Alert(
-            "Error",
-            "No hay conexión con el servidor",
-            "danger",
-            true,
-            404
-          );
+          this.alert = error;
         }
       );
     } else {

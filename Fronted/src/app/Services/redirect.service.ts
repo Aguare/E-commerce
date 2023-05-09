@@ -18,6 +18,10 @@ export class RedirectService {
     this.redirectPage("/login");
   }
 
+  redLogin() {
+    this.redirectPage("/login");
+  }
+
   redirectLogin() {
     this.user = JSON.parse(`${this.storage.get("user")}`);
     switch (this.user?.type) {

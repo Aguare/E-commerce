@@ -21,7 +21,6 @@ export class ListOrderPendingComponent {
 
   changeEdit(order: Order) {
     this.orderEdit = order;
-    console.log(this.orderEdit.date_delivered);
   }
 
   transformDate(date: any): any {

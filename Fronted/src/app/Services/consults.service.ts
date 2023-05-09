@@ -80,6 +80,22 @@ export class ConsultsService {
     );
   }
 
+  searchProducts(
+    name: string,
+    categorys: string[],
+    price: number
+  ): Observable<Product[]> {
+    return this.connection.get<Product[]>(
+      this.BACK_PRODUCT +
+        "search?name=" +
+        name +
+        "&categorys=" +
+        categorys +
+        "&price=" +
+        price
+    );
+  }
+
   //CARDS
   getAllCardsByUser(id: string): Observable<Card[]> {
     return this.connection.get<Card[]>(

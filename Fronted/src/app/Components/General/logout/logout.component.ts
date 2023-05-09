@@ -8,12 +8,18 @@ import { StorageService } from "src/app/Services/storage.service";
   styleUrls: ["./logout.component.scss"],
 })
 export class LogoutComponent {
-  nameUser: string = this.storage.getUser().username;
+  nameUser: string = "";
 
   constructor(
     private storage: StorageService,
     private redirect: RedirectService
-  ) {}
+  ) {
+    if (this.storage.getUser() == null) {
+      this.redirect.redirectLogin();
+    } else {
+      this.nameUser = this.storage.getUser().username;
+    }
+  }
 
   logout() {
     this.storage.clear();

@@ -38,24 +38,25 @@
           </div>
         </li>
       </ul>
-      <form class="my-2">
+      <div class="my-2">
         <div class="input-group">
           <input
             type="text"
             class="form-control"
             placeholder="Buscar"
-            aria-label="Recipient's username"
+            [(ngModel)]="search"
             aria-describedby="button-addon2"
           />
-          <button
+          <a
+            (click)="searchProduct()"
             class="btn btn-outline-light"
             type="submit"
             id="button-addon2"
           >
             <i class="bi bi-search"></i>
-          </button>
+          </a>
         </div>
-      </form>
+      </div>
       <a
         type="button"
         class="btn btn-outline-warning position-relative ms-2 me-2"

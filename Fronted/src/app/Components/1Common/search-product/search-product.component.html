@@ -1,0 +1,120 @@
+<div class="container my-5 w-75">
+  <div class="row">
+    <div class="col-4 border-end">
+      <div class="text-center">
+        <h4>Precio</h4>
+      </div>
+      <label for="customRange2" class="form-label"
+        >Q0.00 - {{ range | currency : "Q" }}</label
+      >
+      <input
+        type="range"
+        class="form-range"
+        [(ngModel)]="range"
+        min="0"
+        [max]="maxRange"
+        id="customRange2"
+      />
+      <div class="text-center my-4">
+        <h4>Categorías</h4>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flex1"
+          (click)="addCategory('Tecnología')"
+        />
+        <label class="form-check-label" for="flex1"> Tecnología </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flex2"
+          (click)="addCategory('Hogar')"
+        />
+        <label class="form-check-label" for="flex2"> Hogar </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flex3"
+          (click)="addCategory('Académico')"
+        />
+        <label class="form-check-label" for="flex3"> Académico </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flex4"
+          (click)="addCategory('Literatura')"
+        />
+        <label class="form-check-label" for="flex4"> Literatura </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flex5"
+          (click)="addCategory('Decoración')"
+        />
+        <label class="form-check-label" for="flex5"> Decoración </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flex6"
+          (click)="addCategory('Otros')"
+        />
+        <label class="form-check-label" for="flex6"> Otros </label>
+      </div>
+      <div class="text-center my-4">
+        <h4>Orden</h4>
+        <button
+          (click)="changeSort()"
+          type="button"
+          class="btn btn-outline-info"
+        >
+          Cambiar Orden
+        </button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Buscar producto"
+          aria-label="Search Product"
+          aria-describedby="button-addon2"
+          [(ngModel)]="search"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-primary"
+            type="button"
+            id="button-addon2"
+            (click)="searchProduct()"
+          >
+            <i class="bi bi-search"></i>
+            Buscar
+          </button>
+        </div>
+      </div>
+      <app-alert [alert]="alert"></app-alert>
+      <div class="" *ngFor="let p of products">
+        <app-car-p-general [product]="p"></app-car-p-general>
+      </div>
+    </div>
+  </div>
+</div>
