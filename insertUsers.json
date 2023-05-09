@@ -1,0 +1,89 @@
+[{
+  "_id": {
+    "$oid": "6458144b0e6b1bf46b01582d"
+  },
+  "username": "admin",
+  "password": "123456",
+  "names": "Nombre Admin",
+  "last_names": "Apellidos Admin",
+  "date_birth": "1999-09-24T00:00:00.000Z",
+  "phone": "12345678",
+  "type": "Admin"
+},{
+  "_id": {
+    "$oid": "6458144b0e6b1bf46b01582e"
+  },
+  "username": "paqueteria1",
+  "password": "123456",
+  "names": "Nombre paqueteria",
+  "last_names": "Apellidos paqueteria",
+  "date_birth": "1999-09-24T00:00:00.000Z",
+  "phone": "12345678",
+  "type": "Parcel"
+},{
+  "_id": {
+    "$oid": "6458144b0e6b1bf46b01582f"
+  },
+  "username": "paqueteria2",
+  "password": "123456",
+  "names": "Nombre paqueteria",
+  "last_names": "Apellidos paqueteria",
+  "date_birth": "1999-09-24T00:00:00.000Z",
+  "phone": "12345678",
+  "type": "Parcel"
+},{
+  "_id": {
+    "$oid": "6458144b0e6b1bf46b015830"
+  },
+  "username": "comun1",
+  "password": "123456",
+  "names": "Nombre comun",
+  "last_names": "Apellidos comun",
+  "date_birth": "1999-09-24T00:00:00.000Z",
+  "phone": "12345678",
+  "type": "Common"
+},{
+  "_id": {
+    "$oid": "6458144b0e6b1bf46b015831"
+  },
+  "username": "comun2",
+  "password": "123456",
+  "names": "Nombre comun",
+  "last_names": "Apellidos comun",
+  "date_birth": "1999-09-24T00:00:00.000Z",
+  "phone": "12345678",
+  "type": "Common"
+},{
+  "_id": {
+    "$oid": "6458144b0e6b1bf46b015832"
+  },
+  "username": "comun3",
+  "password": "123456",
+  "names": "Nombre comun",
+  "last_names": "Apellidos comun",
+  "date_birth": "1999-09-24T00:00:00.000Z",
+  "phone": "12345678",
+  "type": "Common"
+},{
+  "_id": {
+    "$oid": "6458144b0e6b1bf46b015833"
+  },
+  "username": "comun4",
+  "password": "123456",
+  "names": "Nombre comun",
+  "last_names": "Apellidos comun",
+  "date_birth": "1999-09-24T00:00:00.000Z",
+  "phone": "12345678",
+  "type": "Common"
+},{
+  "_id": {
+    "$oid": "6458144b0e6b1bf46b015834"
+  },
+  "username": "comun5",
+  "password": "123456",
+  "names": "Nombre comun",
+  "last_names": "Apellidos comun",
+  "date_birth": "1999-09-24T00:00:00.000Z",
+  "phone": "12345678",
+  "type": "Common"
+}]
