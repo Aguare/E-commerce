@@ -18,4 +18,4 @@ const departamentSchema = new Schema(
   }
 );
 
-export default model("Departament", departamentSchema);
+export default model("Department", departamentSchema);

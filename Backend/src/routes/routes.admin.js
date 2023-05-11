@@ -3,6 +3,7 @@ import Alert from "../models/Alert";
 import createAlert from "../controllers/Errors";
 import Product from "../models/Product";
 import Order from "../models/Order";
+import Revenue from "../models/Revenue";
 
 const router = Router();
 
@@ -494,6 +495,37 @@ router.get("/report5", async (req, res) => {
       $limit: 10,
     },
   ])
+    .then((results) => {
+      res.status(200).send(results);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+router.get("/report6all", async (req, res) => {
+  await Revenue.find()
+    .populate("user_seller")
+    .populate("user_client")
+    .then((results) => {
+      res.status(200).send(results);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+router.get("/report6/:dateInit/:dateEnd", async (req, res) => {
+  const { dateInit, dateEnd } = req.params;
+
+  await Revenue.find({
+    createdAt: {
+      $gte: new Date(dateInit),
+      $lte: new Date(dateEnd),
+    },
+  })
+    .populate("user_seller")
+    .populate("user_client")
     .then((results) => {
       res.status(200).send(results);
     })

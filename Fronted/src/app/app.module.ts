@@ -41,6 +41,7 @@ import { Report4Component } from "./Components/2Admin/Reports/report4/report4.co
 import { Report5Component } from "./Components/2Admin/Reports/report5/report5.component";
 import { CarPGeneralComponent } from "./Components/Products/car-p-general/car-p-general.component";
 import { SearchProductComponent } from './Components/1Common/search-product/search-product.component';
+import { Report6Component } from './Components/2Admin/Reports/report6/report6.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { SearchProductComponent } from './Components/1Common/search-product/sear
     Report5Component,
     CarPGeneralComponent,
     SearchProductComponent,
+    Report6Component,
   ],
   imports: [
     BrowserModule,

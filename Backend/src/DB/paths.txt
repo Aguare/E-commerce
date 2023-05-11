@@ -1,0 +1,4 @@
+"D:/USAC/1er.2023/ARCHIVOS/LAB/E-commerce/Backend/src/DB/insertUsers.json"
+"D:/USAC/1er.2023/ARCHIVOS/LAB/E-commerce/Backend/src/DB/insertProducts.json"
+"D:/USAC/1er.2023/ARCHIVOS/LAB/E-commerce/Backend/src/DB/insertDepartments.json"
+"D:/USAC/1er.2023/ARCHIVOS/LAB/E-commerce/Backend/src/DB/Script.js"

@@ -1,7 +1,7 @@
 import { Router } from "express";
 import Alert from "../models/Alert";
 import createAlert from "../controllers/Errors";
-import Departament from "../models/Departaments";
+import Department from "../models/Departments";
 const router = Router();
 
 router.post("/upload", (req, res) => {
@@ -17,7 +17,7 @@ router.post("/upload", (req, res) => {
 
 router.get("/getDepartaments", async (req, res) => {
   try {
-    const departaments = await Departament.find();
+    const departaments = await Department.find();
     res.status(200).send(departaments);
   } catch (error) {
     const al = createAlert(error);

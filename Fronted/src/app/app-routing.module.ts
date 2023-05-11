@@ -24,6 +24,7 @@ import { Report3Component } from "./Components/2Admin/Reports/report3/report3.co
 import { Report4Component } from "./Components/2Admin/Reports/report4/report4.component";
 import { Report5Component } from "./Components/2Admin/Reports/report5/report5.component";
 import { SearchProductComponent } from "./Components/1Common/search-product/search-product.component";
+import { Report6Component } from "./Components/2Admin/Reports/report6/report6.component";
 
 const routes: Routes = [
   {
@@ -60,6 +61,7 @@ const routes: Routes = [
       { path: "report3", component: Report3Component },
       { path: "report4", component: Report4Component },
       { path: "report5", component: Report5Component },
+      { path: "report6", component: Report6Component },
     ],
   },
   {

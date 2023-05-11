@@ -7,6 +7,7 @@ import { Product } from "../Models/Product";
 import { Departament } from "../Models/Departament";
 import { Card } from "../Models/Card";
 import { Order } from "../Models/Order";
+import { Revenue } from "../Models/Revenue";
 
 @Injectable({
   providedIn: "root",
@@ -179,5 +180,18 @@ export class ConsultsService {
 
   getReport5(): Observable<any[]> {
     return this.connection.get<any[]>(this.BACK_ADMIN + "report5");
+  }
+
+  getReport6All(): Observable<any[]> {
+    return this.connection.get<any[]>(this.BACK_ADMIN + "report6All");
+  }
+
+  getReport6IntervalTime(
+    dateInit: string,
+    dateEnd: string
+  ): Observable<Revenue[]> {
+    return this.connection.get<Revenue[]>(
+      this.BACK_ADMIN + "report6/" + dateInit + "/" + dateEnd
+    );
   }
 }

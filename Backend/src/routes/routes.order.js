@@ -106,7 +106,10 @@ router.post("/addOrder", async (req, res) => {
       "Orden registrada",
       "La orden se ha registrado correctamente"
     );
-    registerRevenue(order);
+    let products = order.products;
+    for (let product of products) {
+      await registerR(product, order.user_client);
+    }
     res.status(200).send(alert);
   } catch (error) {
     const al = createAlert(error);
@@ -114,17 +117,21 @@ router.post("/addOrder", async (req, res) => {
   }
 });
 
-async function registerRevenue(order) {
-  let products = order.products;
-  products.forEach(async (product) => {
-    const string = product.toString();
-    const match = string.match(/"([^"]+)"/);
-    const result = match[1];
-    const prod = await Product.findById(result);
+async function getProduct(product) {
+  const string = product.toString();
+  const match = string.match(/"([^"]+)"/);
+  const result = match[1];
+  const prod = await Product.findById(result).populate("user_seller").exec();
+  return prod;
+}
+
+async function registerR(product, user_client) {
+  try {
+    const prod = await getProduct(product);
     const pri = parseFloat(prod.price);
-    const revenue = Revenue({
+    const revenue = new Revenue({
       user_seller: prod.user_seller,
-      user_client: order.user_client,
+      user_client: user_client,
       revenue_seller: (pri * 0.95).toFixed(2),
       revenue_corporation: (pri * 0.05).toFixed(2),
     });
@@ -133,7 +140,9 @@ async function registerRevenue(order) {
       { $inc: { stock: -product.quantity } }
     );
     await revenue.save();
-  });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function createMessage(title, message) {
