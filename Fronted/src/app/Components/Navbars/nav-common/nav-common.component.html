@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/common/home">E-commerce</a>
+    <button
+      class="navbar-toggler d-lg-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse flex-row" id="collapsibleNavId">
+      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/common/list-orders"
+            ><i class="bi bi-box-seam"></i> Pedidos</a
+          >
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="dropdownId"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i class="bi bi-card-checklist"></i> Mis Productos</a
+          >
+          <div class="dropdown-menu" aria-labelledby="dropdownId">
+            <a class="dropdown-item" href="/common/list-products">Ver</a>
+            <a class="dropdown-item" href="/common/register-product/new"
+              >Registrar</a
+            >
+          </div>
+        </li>
+      </ul>
+      <div class="my-2">
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Buscar"
+            [(ngModel)]="search"
+            aria-describedby="button-addon2"
+          />
+          <a
+            (click)="searchProduct()"
+            class="btn btn-outline-light"
+            type="submit"
+            id="button-addon2"
+          >
+            <i class="bi bi-search"></i>
+          </a>
+        </div>
+      </div>
+      <a
+        type="button"
+        class="btn btn-outline-warning position-relative ms-2 me-2"
+        href="/common/shop-cart"
+      >
+        <i class="bi bi-cart4 text-warning"></i>
+        <span
+          *ngIf="products > 0"
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+        >
+          {{ products }}
+        </span>
+      </a>
+      <app-logout></app-logout>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

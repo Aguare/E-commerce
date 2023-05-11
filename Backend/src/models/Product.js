@@ -12,18 +12,14 @@ const productSchema = new Schema(
     price: Number,
     stock: Number,
     allowed: {
-      type: Boolean,
-      default: false,
+      type: Number,
+      default: 1,
     },
-    categorys: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Category",
-      },
-    ],
+    category: String,
   },
   {
     timestamps: true,
+    versionKey: false,
   }
 );
 

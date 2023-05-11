@@ -1,0 +1,61 @@
+<div class="container w-75 my-5">
+  <div class="text-center">
+    <h2>Pedidos en camino</h2>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-light">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Usuario</th>
+          <th scope="col">Dirección</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Entrega</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Total</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let or of orders">
+          <td>{{ or.user_client.username }}</td>
+          <td>{{ or.address }}</td>
+          <td>{{ transformDate(or.createdAt) }}</td>
+          <td>{{ transformDate(or.date_delivered) }}</td>
+          <td [ngSwitch]="or.status">
+            <span
+              *ngSwitchCase="'delivered'"
+              class="badge rounded-pill text-bg-success"
+            >
+              <i class="bi bi-check-lg"></i> Entregado</span
+            >
+            <span
+              *ngSwitchCase="'pending'"
+              class="badge rounded-pill text-bg-warning"
+            >
+              <i class="bi bi-truck"></i> En Camino</span
+            >
+            <span
+              *ngSwitchCase="'canceled'"
+              class="badge rounded-pill text-bg-danger"
+            >
+              <i class="bi bi-x"></i> Cancelado</span
+            >
+          </td>
+          <td>{{ or.total | currency : "Q" }}</td>
+          <td>
+            <a
+              type="button"
+              (click)="changeEdit(or)"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              class="btn btn-sm btn-outline-warning"
+            >
+              Editar
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <app-edit-order [order]="orderEdit"></app-edit-order>
+</div>

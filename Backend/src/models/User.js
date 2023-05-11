@@ -16,6 +16,7 @@ const userSchema = new Schema(
     last_names: String,
     date_birth: Date,
     phone: String,
+    type: String,
   },
   {
     timestamps: true,

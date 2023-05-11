@@ -1,0 +1,24 @@
+<a
+  class="text-decoration-none"
+  [href]="'/common/view-product/' + this.product._id"
+>
+  <div class="card mb-3 border-0 text-decoration-none" style="max-width: 540px">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img [src]="this.product.image" class="img-fluid rounded-start" />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ this.product.name }}</h5>
+          <p class="card-text m-0">
+            <kbd class="bg-primary">{{ this.product.category }}</kbd>
+          </p>
+          <p class="card-text">
+            {{ this.product.description | slice : 0 : 100 }}...
+          </p>
+          <h5 class="card-text">{{ this.product.price | currency : "Q" }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>

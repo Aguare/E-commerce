@@ -1,0 +1,106 @@
+<div class="container w-50 my-5">
+  <h1 class="text-center">Registrar Producto</h1>
+  <app-alert [alert]="alert"></app-alert>
+  <form
+    [formGroup]="registerForm"
+    (ngSubmit)="register()"
+    class="was-validated"
+    enctype="multipart/form-data"
+  >
+    <div class="col my-3">
+      <label class="form-label">Nombre</label>
+      <div class="input-group has-validation">
+        <input
+          type="text"
+          class="form-control is-invalid"
+          formControlName="name"
+          minlength="4"
+          required
+        />
+      </div>
+    </div>
+    <div class="col my-3">
+      <label for="validationServer01" class="form-label">Descripción</label>
+      <textarea
+        type="password"
+        formControlName="description"
+        class="form-control is-valid"
+        minlength="10"
+        rows="2"
+        required
+      ></textarea>
+    </div>
+    <div class="col my-3">
+      <div class="mb-3">
+        <label *ngIf="isUpdate" for="validationServer01" class="form-label"
+          >Seleccione una imagen para cambiar la actual</label
+        >
+        <input
+          class="form-control form-control"
+          formControlName="image"
+          (change)="getPath($event)"
+          accept="image/*"
+          type="file"
+        />
+      </div>
+    </div>
+    <div *ngIf="isUpdate" class="col my-3">
+      <label *ngIf="isUpdate" for="validationServer01" class="form-label"
+        >Imagen Actual</label
+      >
+      <div class="container mb-3" style="max-width: 300px">
+        <img
+          [src]="this.product.image"
+          class="img-fluid"
+          height="300px"
+          width="300px"
+        />
+      </div>
+    </div>
+    <div class="col my-3">
+      <label for="validationCustomUsername" class="form-label">Precio</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">Q</span>
+        <input
+          type="number"
+          formControlName="price"
+          class="form-control"
+          min="1"
+          max="99999"
+          step="0.01"
+          required
+        />
+      </div>
+    </div>
+    <div class="col my-3">
+      <label class="form-label">Cantidad</label>
+      <input
+        type="number"
+        formControlName="stock"
+        class="form-control is-valid"
+        min="1"
+        max="999"
+        required
+      />
+    </div>
+    <div class="col my-3">
+      <label for="validationServer04" class="form-label">Categoría</label>
+      <select
+        formControlName="category"
+        class="form-select is-invalid"
+        required
+      >
+        <option selected value="Tecnología">Tecnología</option>
+        <option value="Hogar">Hogar</option>
+        <option value="Académico">Académico</option>
+        <option value="Literatura">Literatura</option>
+        <option value="Decoración">Decoración</option>
+        <option value="Otros">Otros</option>
+      </select>
+    </div>
+    <div class="col d-grid my-3">
+      <button class="btn btn-success" type="submit">Registrar</button>
+    </div>
+  </form>
+  <app-alert [alert]="alert"></app-alert>
+</div>

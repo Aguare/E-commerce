@@ -1,16 +1,22 @@
-import { Schema, Model } from "mongoose";
+import { Schema, model } from "mongoose";
 
-const revenueSchema = new Schema({
-  user_seller: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
+const revenueSchema = new Schema(
+  {
+    user_seller: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+    user_client: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+    revenue_seller: Number,
+    revenue_corporation: Number,
   },
-  user_client: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-  },
-  revenue_seller: Number,
-  revenue_corporation: Number,
-});
+  {
+    timestamps: true,
+    versionKey: false,
+  }
+);
 
-export default Model("Revenue", revenueSchema);
+export default model("Revenue", revenueSchema);

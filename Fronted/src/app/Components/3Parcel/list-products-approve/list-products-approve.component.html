@@ -1,0 +1,47 @@
+<div class="container w75 my-5">
+  <div class="text-center">
+    <h2>Lista de Productos para Revisión</h2>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-light text-center">
+      <thead>
+        <tr>
+          <th scope="col">Usuario</th>
+          <th scope="col">Producto</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Ingreso</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="5" *ngIf="products.length == 0">
+            <div class="alert alert-warning" role="alert">
+              No hay productos en espera
+            </div>
+          </td>
+        </tr>
+        <tr *ngFor="let p of products">
+          <td>{{ p.user_seller?.username }}</td>
+          <td>{{ p.name }}</td>
+          <td>{{ p.price | currency : "Q" }}</td>
+          <td>{{ p.stock }}</td>
+          <td>{{ transformDate(p.createdAt) }}</td>
+          <td>
+            <button
+              (click)="changeEdit(p)"
+              type="button"
+              class="btn btn-sm btn-outline-info"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Editar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-edit-product [product]="selectedProduct"></app-edit-product>

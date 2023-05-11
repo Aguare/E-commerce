@@ -1,0 +1,72 @@
+<app-nav-main></app-nav-main>
+<div class="container my-5 w-50">
+  <div
+    class="btn-group d-flex"
+    role="group"
+    aria-label="Basic radio toggle button group"
+  >
+    <input
+      type="radio"
+      class="btn-check"
+      name="btnradio"
+      id="btnradio1"
+      autocomplete="off"
+      (click)="press1()"
+      checked
+    />
+    <label class="btn btn-outline-primary" for="btnradio1"
+      >Iniciar Sesión</label
+    >
+    <input
+      type="radio"
+      class="btn-check"
+      name="btnradio"
+      id="btnradio2"
+      (click)="press2()"
+      autocomplete="off"
+    />
+    <label class="btn btn-outline-primary" for="btnradio2">Registrarse</label>
+  </div>
+  <div class="container my-xl-5" style="max-width: 500px">
+    <div *ngIf="isLogin" class="row my-4">
+      <div class="col d-grid align-items-center">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="text-center">
+            <h1>Iniciar Sesión</h1>
+            <label>Inicia sesión para poder comprar</label>
+          </div>
+          <div class="input-group mb-3 my-3">
+            <span class="input-group-text" id="basic-addon1">@</span>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="username"
+              placeholder="Usuario"
+              aria-label="Usuario"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Contraseña</span>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+              placeholder="Contraseña"
+            />
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary text-white">
+              Ingresar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <app-alert [alert]="alert"></app-alert>
+</div>
+<div *ngIf="!isLogin" class="container my-5">
+  <app-register-user [isCommon]="true"></app-register-user>
+</div>

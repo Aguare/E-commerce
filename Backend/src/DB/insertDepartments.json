@@ -1,0 +1,79 @@
+[
+  {
+    "nombre": "San Marcos",
+    "municipios": [
+      "San Marcos",
+      "San Pedro Sacatepéquez",
+      "Comitancillo",
+      "San Antonio Sacatepéquez",
+      "Concepción Tutuapa",
+      "Tacaná",
+      "Sibinal",
+      "Tajumulco",
+      "Tejutla",
+      "Ixtahuacán",
+      "San José Ojetenam",
+      "San Cristóbal Cucho",
+      "Sipacapa",
+      "Esquipulas Palo Gordo",
+      "Río Blanco",
+      "San Lorenzo",
+      "La Blanca",
+      "El Tumbador",
+      "Nuevo Progreso",
+      "Santo Domingo",
+      "San Felipe",
+      "El Rodeo"
+    ]
+  },
+  {
+    "nombre": "Quetzaltenango",
+    "municipios": [
+      "Quetzaltenango",
+      "Salcajá",
+      "Olintepeque",
+      "San Carlos Sija",
+      "Sibilia",
+      "Cabricán",
+      "Cajolá",
+      "San Miguel Siguilá",
+      "Ostuncalco",
+      "San Mateo",
+      "Concepción Chiquirichapa",
+      "San Martín Sacatepéquez",
+      "Almolonga",
+      "Cantel",
+      "Huitán",
+      "Zunil",
+      "Colomba",
+      "San Francisco La Unión",
+      "El Palmar",
+      "Coatepeque",
+      "Génova",
+      "Flores Costa Cuca",
+      "La Esperanza"
+    ]
+  },
+  {
+    "nombre": "Guatemala",
+    "municipios": [
+      "Guatemala",
+      "Santa Catarina Pinula",
+      "San José Pinula",
+      "San José del Golfo",
+      "Palencia",
+      "Chinautla",
+      "San Pedro Ayampuc",
+      "Mixco",
+      "San Pedro Sacatepéquez",
+      "San Juan Sacatepéquez",
+      "San Raymundo",
+      "Chuarrancho",
+      "Fraijanes",
+      "Amatitlán",
+      "Villa Nueva",
+      "Villa Canales",
+      "Petapa"
+    ]
+  }
+]

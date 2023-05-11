@@ -5,7 +5,7 @@ function createAlert(error) {
   switch (error.code) {
     case 11000:
       alert.title = "Error";
-      alert.message = "El nombre de usuario ya está registrado";
+      alert.message = "El registro ya existe" + error.message;
       break;
     case 11600:
       alert.title = "Error";

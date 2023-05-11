@@ -1,0 +1,251 @@
+<div class="container w-75">
+  <div class="row">
+    <div class="col">
+      <div class="text-center">
+        <h4>Dirección de Envío</h4>
+      </div>
+      <label>Departamento</label>
+      <select class="form-select" (change)="updateDepart($event)">
+        <option *ngFor="let dep of departament" value="{{ dep.nombre }}">
+          {{ dep.nombre }}
+        </option>
+      </select>
+      <div class="my-3">
+        <label>Municipio</label>
+        <select
+          class="form-select"
+          (change)="updateMun($event)"
+          *ngIf="departamentSelected"
+        >
+          <option
+            *ngFor="let mun of currentMunicipios"
+            value="{{ mun }}"
+            selected
+          >
+            {{ mun }}
+          </option>
+        </select>
+      </div>
+      <div class="my-3">
+        <label>Ingrese la dirección</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="address"
+          placeholder="6ta. Calle A 15-121"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="text-center">
+        <h4>Productos</h4>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-light text-center">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of order.products">
+              <td>{{ p.product.name }}</td>
+              <td>{{ p.quantity }}</td>
+              <td>{{ p.product.price | currency : "Q" }}</td>
+            </tr>
+          </tbody>
+          <tfoot class="table-secondary">
+            <tr>
+              <td colspan="2">Total</td>
+              <td>{{ order.total | currency : "Q" }}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="text-center">
+      <h3>Método de Pago</h3>
+      <app-alert [alert]="alert"></app-alert>
+      <div class="">
+        <button
+          type="button"
+          class="btn btn-info"
+          data-bs-toggle="button"
+          aria-pressed="false"
+          autocomplete="off"
+          (click)="isAddCard = !isAddCard"
+        >
+          <i class="bi bi-credit-card-2-back"></i>
+          Agregar Tarjeta
+        </button>
+      </div>
+    </div>
+    <div *ngIf="cards.length > 0 && !isAddCard">
+      <div class="text-center my-3">
+        <h4>Tarjetas Asociadas</h4>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-light text-center">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Tarjeta</th>
+              <th scope="col">Titular</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of cards">
+              <td>**** **** **** **{{ c.number.toString().slice(-2) }}</td>
+              <td>{{ c.name }}</td>
+              <td>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    (change)="selectCard(c)"
+                    id="flexRadioDefault1"
+                  />
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div *ngIf="isAddCard" class="container w-75 my-3">
+      <div class="text-center">
+        <h4>Agregar Tarjeta</h4>
+      </div>
+      <div class="col">
+        <div class="my-3">
+          <label>Nombre del Titular</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="cardName"
+            placeholder="Nombre del Titular"
+            required
+          />
+        </div>
+        <div class="my-3">
+          <label>Número de Tarjeta</label>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Número de Tarjeta"
+            pattern="[0-9]{16}"
+            [(ngModel)]="cardNumber"
+            min="3000000000000000"
+            max="9999999999999999"
+            required
+          />
+        </div>
+        <div class="my-3">
+          <div class="row">
+            <div class="col">
+              <label>Fecha de Vencimiento</label>
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="MM"
+                    [(ngModel)]="cardMonth"
+                    step="1"
+                    min="1"
+                    max="12"
+                    required
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="YYYY"
+                    [(ngModel)]="cardYear"
+                    step="1"
+                    min="2023"
+                    max="2999"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <label>Código de Seguridad</label>
+              <input
+                type="number"
+                class="form-control"
+                placeholder="Código de Seguridad"
+                pattern="[0-9]{3}"
+                [(ngModel)]="cardCvv"
+                step="1"
+                min="1"
+                max="999"
+                required
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col my-3">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckIndeterminate"
+            checked
+          />
+          <label class="form-check-label" for="flexCheckIndeterminate">
+            Guardar Tarjeta
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button
+        type="button"
+        class="btn btn-success"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        (click)="createOrder()"
+        [disabled]="!isAddCard && selectedCardOb.name == ''"
+      >
+        <i class="bi bi-check-circle"></i>
+        Confirmar Orden
+      </button>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Carrito de Compras</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="refresh()"
+        ></button>
+      </div>
+      <div class="modal-body"><app-alert [alert]="alert"></app-alert></div>
+    </div>
+  </div>
+</div>
